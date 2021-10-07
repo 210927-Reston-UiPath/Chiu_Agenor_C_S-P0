@@ -3500,15 +3500,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cy\\.nuget\\packages\\": {}
+    "C:\\Users\\cythy\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Chiu_C-P0",
       "projectName": "Chiu_C-P0",
-      "projectPath": "C:\\revature\\Rosa\\Chiu_C-P0\\Chiu_C-P0\\.local",
-      "packagesPath": "C:\\Users\\Cy\\.nuget\\packages\\",
-      "outputPath": "C:\\revature\\Rosa\\Chiu_C-P0\\Chiu_C-P0\\.local"
+      "projectPath": "C:\\revature\\Chiu_Agenor_C_S-P0\\.local",
+      "packagesPath": "C:\\Users\\cythy\\.nuget\\packages\\",
+      "outputPath": "C:\\revature\\Chiu_Agenor_C_S-P0\\.local"
     },
     "frameworks": {
       "net461": {
