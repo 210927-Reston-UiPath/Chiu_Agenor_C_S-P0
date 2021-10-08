@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Customer" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="936,879.2" sap2010:WorkflowViewState.IdRef="Customer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Customer" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="936,1319.2" sap2010:WorkflowViewState.IdRef="Customer_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -31,7 +31,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,12 +62,15 @@
       <AssemblyReference>UiPath.GSuite.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Customer" sap:VirtualizedContainerService.HintSize="752.8,774.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Customers" sap:VirtualizedContainerService.HintSize="752.8,1214.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="findCustomer" />
       <Variable x:TypeArguments="sd:DataTable" Name="customerList" />
       <Variable x:TypeArguments="x:Int32" Name="found" />
       <Variable x:TypeArguments="x:String" Name="customer" />
+      <Variable x:TypeArguments="x:String" Name="client" />
+      <Variable x:TypeArguments="sd:DataTable" Name="shoppingList" />
+      <Variable x:TypeArguments="x:String" Name="items" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -79,7 +82,7 @@
         <OutArgument x:TypeArguments="x:String">[findCustomer]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:ReadRange AddHeaders="False" DataTable="[customerList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="711.2,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A:B" SheetName="Sheet1" WorkbookPath="C:\Revature\P0\Customers_Vendors.xlsx" />
+    <ui:ReadRange AddHeaders="False" DataTable="[customerList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="711.2,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A:B" SheetName="Sheet1" WorkbookPath="C:\Revature\P0\Customers.xlsx" />
     <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[customerList]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Column0" LookupValue="[findCustomer]" RowIndex="[found]">
       <ui:LookupDataTable.CellValue>
         <OutArgument x:TypeArguments="x:String">[customer]</OutArgument>
@@ -93,5 +96,12 @@
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[findCustomer + &quot; found&quot;]" />
       </If.Else>
     </If>
+    <If Condition="[found &gt; 0]" sap:VirtualizedContainerService.HintSize="711.2,237.6" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <ui:ReadRange AddHeaders="False" DataTable="[shoppingList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A2:A5" SheetName="[findCustomer]" WorkbookPath="C:\Revature\P0\Customers.xlsx" />
+      </If.Then>
+    </If>
+    <ui:OutputDataTable DataTable="[shoppingList]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[items]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="711.2,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[items]" />
   </Sequence>
 </Activity>
