@@ -3500,15 +3500,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Steven\\.nuget\\packages\\": {}
+    "C:\\Users\\Cy\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Chiu_C-P0",
       "projectName": "Chiu_C-P0",
-      "projectPath": "C:\\Revature\\P0\\.local",
-      "packagesPath": "C:\\Users\\Steven\\.nuget\\packages\\",
-      "outputPath": "C:\\Revature\\P0\\.local"
+      "projectPath": "C:\\revature\\Rosa\\Chiu_C-P0\\Chiu_C-P0\\.local",
+      "packagesPath": "C:\\Users\\Cy\\.nuget\\packages\\",
+      "outputPath": "C:\\revature\\Rosa\\Chiu_C-P0\\Chiu_C-P0\\.local"
     },
     "frameworks": {
       "net461": {
