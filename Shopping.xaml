@@ -79,19 +79,19 @@
         <OutArgument x:TypeArguments="x:String">[selection]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1084.8,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Rosa wants to ask which Vendor you want to buy it From">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1186.4,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Rosa wants to ask which Vendor you want to buy it From">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[vendorCheck]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:ReadRange AddHeaders="True" DataTable="[currItems]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1084.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[selection]" WorkbookPath="Customers.xlsx">
+    <ui:ReadRange AddHeaders="True" DataTable="[currItems]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1186.4,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[selection]" WorkbookPath="Customers.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
         </InArgument>
       </ui:ReadRange.Range>
     </ui:ReadRange>
-    <ui:ReadRange AddHeaders="True" DataTable="[currProduct]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1084.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="[vendorCheck]" WorkbookPath="Vendors.xlsx">
+    <ui:ReadRange AddHeaders="True" DataTable="[currProduct]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1186.4,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="[vendorCheck]" WorkbookPath="Vendors.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
@@ -152,7 +152,7 @@
                         <InArgument x:TypeArguments="x:String">[Vend_row("Items").ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="902.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign sap:VirtualizedContainerService.HintSize="1004,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[getQuantity]</OutArgument>
                       </Assign.To>
@@ -160,7 +160,7 @@
                         <InArgument x:TypeArguments="x:String">[Vend_row("Quantity").ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap:VirtualizedContainerService.HintSize="902.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign sap:VirtualizedContainerService.HintSize="1004,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[getPrice]</OutArgument>
                       </Assign.To>
@@ -177,7 +177,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:WriteCell Cell="[&quot;B&quot;+CStr(i+2)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="435.2,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[selection]" Text="[getItem]" WorkbookPath="Customers.xlsx" />
-                          <ui:WriteCell Cell="[&quot;C&quot;+CStr(i+2)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="435.2,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="[selection]" Text="[getPrice]" WorkbookPath="Customers.xlsx" />
+                          <ui:WriteCell Cell="[&quot;D&quot;+CStr(i+2)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="435.2,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="[selection]" Text="[getPrice]" WorkbookPath="Customers.xlsx" />
                           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,287.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                             <ui:CommentOut.Body>
                               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,208.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
